@@ -10,7 +10,7 @@
 
     // the link to your model provided by Teachable Machine export panel
     const URL = "./my_model/";
-
+    const a = "null";
     let model, webcam, labelContainer, maxPredictions;
 
     // Load the image model and setup the webcam
@@ -51,8 +51,16 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
+            if (i == 0)
+            {
+                a = "meake";
+            }
+            else if (i == 1)
+            {
+                a = "metoji";
+            }
             const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                a + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
