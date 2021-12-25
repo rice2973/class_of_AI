@@ -1,4 +1,4 @@
-<div>Teachable Machine Image Model　asdfgghjhgffddfghgfds</div>
+<div>Teachable Machine Image Model</div>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
@@ -10,6 +10,7 @@
 
     // the link to your model provided by Teachable Machine export panel
     const URL = "./my_model/";
+
     let model, webcam, labelContainer, maxPredictions;
 
     // Load the image model and setup the webcam
@@ -49,19 +50,11 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        var a = "nu"
         for (let i = 0; i < maxPredictions; i++) {
-            if (i == 0)
-            {
-                a = "meake"
-            }
-            else if (i == 1)
-            {
-                a = "metoji"
-            }
             const classPrediction =
-                a + ": " + prediction[i].probability.toFixed(2);
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
 </script>
+
