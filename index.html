@@ -10,7 +10,6 @@
 
     // the link to your model provided by Teachable Machine export panel
     const URL = "./my_model/";
-    const a = "null";
     let model, webcam, labelContainer, maxPredictions;
 
     // Load the image model and setup the webcam
@@ -50,6 +49,7 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
+        var a = "nu"
         for (let i = 0; i < maxPredictions; i++) {
             if (i == 0)
             {
